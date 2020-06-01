@@ -1,0 +1,51 @@
+/**
+ * E-mergo Divider Styles
+ *
+ * @package E-mergo Tools Bundle
+ */
+.emergo-divider {
+	position: absolute;
+	display: block;
+}
+
+.emergo-divider.horizontal {
+	border-bottom: 1px solid #a6a6a6;
+	left: 5px;
+	right: 5px;
+}
+
+.emergo-divider.vertical {
+	border-right: 1px solid #a6a6a6;
+	top: 5px;
+	bottom: 5px;
+}
+
+.emergo-divider.horizontal.align-start {
+	top: 0%;
+}
+
+.emergo-divider.vertical.align-start {
+	left: 0%;
+}
+
+.emergo-divider.horizontal.align-center {
+	top: 50%;
+}
+
+.emergo-divider.vertical.align-center {
+	left: 50%;
+}
+
+.emergo-divider.horizontal.align-end {
+	bottom: 0%;
+}
+
+.emergo-divider.vertical.align-end {
+	right: 0%;
+}
+
+/* Card-based themes */
+
+.qv-client.qv-card #qv-stage-container #grid .qv-object-wrapper .qv-object-emergo-divider .qv-inner-object {
+	padding: 0px;
+}
