@@ -7,7 +7,7 @@
  */
 define([
 	"./util/util",
-	"text!./emergo-divider.qext"
+	"text!./qs-emergo-divider.qext"
 ], function( util, qext ) {
 
 	/**
@@ -138,7 +138,7 @@ define([
 				component: "button",
 				action: function() {
 					util.requireMarkdownMimetype().finally( function() {
-						window.open(window.requirejs.toUrl("extensions/emergo-divider/docs/docs.html"), "_blank");
+						window.open(window.requirejs.toUrl("extensions/qs-emergo-divider/docs/docs.html"), "_blank");
 					});
 				}
 			}

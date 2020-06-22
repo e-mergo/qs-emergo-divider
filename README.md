@@ -2,14 +2,14 @@
 Qlik Sense Visualization Extension
 Name: E-mergo Divider
 Version: 0.1.20191114
-QEXT: emergo-divider.qext
+QEXT: qs-emergo-divider.qext
 ---
 
 # E-mergo Divider
 
 **E-mergo Divider** is a Qlik Sense visualization extension developed by [E-mergo](https://www.e-mergo.nl). This extension enables the dashboard designer to insert a visual indicator of separation between app visualizations.
 
-This extension is part of the E-mergo Tools bundle.
+This extension is part of the [E-mergo Tools bundle](https://www.e-mergo.nl/e-mergo-tools-bundle).
 
 This extension is [hosted on GitHub](https://github.com/emergo/qs-emergo-divider). You can report bugs and discuss features on the [issues page](https://github.com/emergo/qs-emergo-divider/issues).
 

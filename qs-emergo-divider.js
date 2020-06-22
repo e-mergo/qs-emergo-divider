@@ -20,10 +20,10 @@ define([
 ], function( $, props, initProps, util, css ) {
 
 	// Add global styles to the page
-	util.registerStyle("emergo-divider", css);
+	util.registerStyle("qs-emergo-divider", css);
 
 	// Extension template
-	var tmpl = '<div class="emergo-divider" ng-class="elClass()" ng-style="elStyle()"></div>',
+	var tmpl = '<div class="qs-emergo-divider" ng-class="elClass()" ng-style="elStyle()"></div>',
 
 	/**
 	 * Extension controller function

@@ -7,7 +7,7 @@
  * @return {Object}               Initial properties
  */
 define([
-	"text!./emergo-divider.qext"
+	"text!./qs-emergo-divider.qext"
 ], function( qext ) {
 	return {
 		props: {
