@@ -1,7 +1,7 @@
 ---
 Qlik Sense Visualization Extension
 Name: E-mergo Divider
-Version: 0.1.20191114
+Version: 1.0.20200622
 QEXT: qs-emergo-divider.qext
 ---
 
@@ -49,6 +49,9 @@ E-mergo provides paid support through standard support contracts. For other scen
 Requests for additional features can be posted in the extension's GitHub repository. Depending on your own code samples and the availability of E-mergo developers your request may be considered and included.
 
 ## Changelog
+
+#### 1.0.20200622
+- Fixed internal naming and updated docs
 
 #### 0.1.20191114
 Initial release.
