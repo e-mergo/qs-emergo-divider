@@ -9,9 +9,9 @@ QEXT: qs-emergo-divider.qext
 
 **E-mergo Divider** is a Qlik Sense visualization extension developed by [E-mergo](https://www.e-mergo.nl). This extension enables the dashboard designer to insert a visual indicator of separation between app visualizations.
 
-This extension is part of the [E-mergo Tools bundle](https://www.e-mergo.nl/e-mergo-tools-bundle).
+This extension is part of the [E-mergo Tools bundle](hhttps://www.e-mergo.nl/e-mergo-tools-bundle/?utm_medium=download&utm_source=tools_bundle&utm_campaign=E-mergo_Extension&utm_term=toolsbundle&utm_content=sitelink).
 
-This extension is [hosted on GitHub](https://github.com/emergo/qs-emergo-divider). You can report bugs and discuss features on the [issues page](https://github.com/emergo/qs-emergo-divider/issues).
+This extension is [hosted on GitHub](https://github.com/e-mergo/qs-emergo-divider). You can report bugs and discuss features on the [issues page](https://github.com/e-mergo/qs-emergo-divider/issues).
 
 ## Why is this extension needed?
 Within the grid system of Qlik Sense app visualizations are laid out without standardized means of indicating hierarchy or separation. There is only empty space in between the visualizations.
