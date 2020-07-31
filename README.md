@@ -50,6 +50,9 @@ Requests for additional features can be posted in the extension's GitHub reposit
 
 ## Changelog
 
+#### 1.1.20200731
+- Fixed logic for the _Open Documentation_ button
+
 #### 1.0.20200623
 - Updated docs files
 
