@@ -50,14 +50,17 @@ Requests for additional features can be posted in the extension's GitHub reposit
 
 ## Changelog
 
+#### 1.1.20200918 - QS Sept 2020
+- Checked for the latest version of QS.
+
 #### 1.1.20200731
-- Fixed logic for the _Open Documentation_ button
+- Fixed logic for the _Open Documentation_ button.
 
 #### 1.0.20200623
-- Updated docs files
+- Updated docs files.
 
 #### 1.0.20200622
-- Fixed internal naming and updated docs
+- Fixed internal naming and updated docs.
 
 #### 0.1.20191114
 Initial release.
