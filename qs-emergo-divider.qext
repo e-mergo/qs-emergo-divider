@@ -2,7 +2,7 @@
 	"name": "E-mergo Divider",
 	"type": "visualization",
 	"author": "Laurens Offereins, E-mergo",
-	"version": "1.1.20200731",
+	"version": "1.1.20200918",
 	"description": "Divider element for visually separating parts of the dashboard.",
 	"preview": "logo-emergo.png",
 	"license": "MIT License",
