@@ -1,5 +1,6 @@
 {
-	"name": "E-mergo Divider",
+	"title": "E-mergo Divider",
+	"name": "Divider",
 	"type": "visualization",
 	"author": "Laurens Offereins, E-mergo",
 	"version": "1.1.20200918",

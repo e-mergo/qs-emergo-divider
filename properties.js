@@ -115,7 +115,7 @@ define([
 	 */
 	about = {
 		label: function() {
-			return "About " + JSON.parse(qext).name;
+			return "About " + JSON.parse(qext).title;
 		},
 		type: "items",
 		items: {
