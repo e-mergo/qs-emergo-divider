@@ -4,7 +4,8 @@
 	"type": "visualization",
 	"author": "Laurens Offereins, E-mergo",
 	"version": "1.1.20200918",
-	"description": "Divider element for visually separating parts of the dashboard.",
+	"description": "Divider element for visually separating elements on the sheet.",
+	"icon": "split",
 	"preview": "logo-emergo.png",
 	"license": "MIT License",
 	"bundle": {
