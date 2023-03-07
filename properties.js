@@ -1,21 +1,36 @@
 /**
- * E-mergo Buttons Property Panel definition
+ * E-mergo Divider Property Panel definition
  *
+ * @param  {Object} qlik          Qlik's core API
  * @param  {Object} util          E-mergo utility functions
  * @param  {String} qext          Extension QEXT data
  * @return {Object}               Extension Property Panel definition
  */
 define([
+	"qlik",
 	"./util/util",
 	"text!./qs-emergo-divider.qext"
-], function( util, qext ) {
+], function( qlik, util, qext ) {
+	/**
+	 * Holds the reference to the current app's API
+	 *
+	 * @type {Object}
+	 */
+	var app = qlik.currApp(),
+
+	/**
+	 * Holds the app's current theme data
+	 *
+	 * @type {Object}
+	 */
+	currTheme,
 
 	/**
 	 * Holds the settings definition of the appearance sub-panel
 	 *
 	 * @type {Object}
 	 */
-	var appearance = {
+	appearance = {
 		uses: "settings",
 		items: {
 			general: {
@@ -89,6 +104,12 @@ define([
 						component: "color-picker",
 						ref: "props.color",
 						dualOutput: true,
+						defaultValue: function() {
+							return {
+								index: -1,
+								color: currTheme && currTheme.properties.dataColors ? currTheme.properties.dataColors.primaryColor : "#000000"
+							};
+						},
 						show: function( layout ) {
 							return "color" === layout.props.styleType;
 						}
@@ -115,7 +136,7 @@ define([
 	 */
 	about = {
 		label: function() {
-			return "About " + JSON.parse(qext).title;
+			return "About ".concat(JSON.parse(qext).title);
 		},
 		type: "items",
 		items: {
@@ -125,7 +146,7 @@ define([
 			},
 			version: {
 				label: function() {
-					return "Version: " + JSON.parse(qext).version;
+					return "Version: ".concat(JSON.parse(qext).version);
 				},
 				component: "text"
 			},
@@ -144,6 +165,19 @@ define([
 			}
 		}
 	};
+
+	// Find the appprops object and subscribe to layout changes
+	// This listener remains running in memory without end, but it is only
+	// created once for all instances of this extension.
+	app.getObject("AppPropsList").then( function( obj ) {
+		obj.layoutSubscribe( function() {
+
+			// Set the current theme
+			app.theme.getApplied().then( function( theme ) {
+				currTheme = theme;
+			});
+		});
+	});
 
 	return {
 		type: "items",
