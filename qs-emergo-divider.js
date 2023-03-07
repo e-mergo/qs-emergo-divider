@@ -50,7 +50,7 @@ define([
 		$scope.elClass = function() {
 			var classes = [
 				$scope.layout.props.orientation,
-				"align-" + $scope.layout.props.alignment
+				"align-".concat($scope.layout.props.alignment)
 			];
 
 			return classes;
@@ -76,14 +76,14 @@ define([
 			} else {
 				color = props[props.styleType];
 				color = util.argbToRgb(color) || util.hexToRgb(color);
-				color = color ? "rgb(" + color.r + "," + color.g + "," + color.b + ")" : "";
+				color = color ? "rgb(".concat(color.r, ",", color.g, ",", color.b, ")") : "";
 			}
 			styles["border-color"] = color;
 
 			// Width
-			styles["border-width"] = props.width + "px";
+			styles["border-width"] = "".concat(props.width, "px");
 			if (props.width > 1 && "center" === props.alignment) {
-				styles.transform = ("vertical" === props.orientation ? "translateX" : "translateY") + "(calc(-50%" + (props.width % 2 ? " + 1px" : "") + "))";
+				styles.transform = ("vertical" === props.orientation ? "translateX" : "translateY").concat("(calc(-50%", (props.width % 2 ? " + 1px" : ""), "))");
 			}
 
 			return styles;
