@@ -4,6 +4,7 @@
  * @since 20191113
  * @author Laurens Offereins <https://github.com/lmoffereins>
  *
+ * @param  {Object} qlik      Qlik's core API
  * @param  {Object} $         jQuery
  * @param  {Object} props     Property panel definition
  * @param  {Object} initProps Initial properties
@@ -12,18 +13,56 @@
  * @return {Object}           Extension structure
  */
 define([
+	"qlik",
 	"jquery",
 	"./properties",
 	"./initial-properties",
 	"./util/util",
 	"text!./style.css"
-], function( $, props, initProps, util, css ) {
+], function( qlik, $, props, initProps, util, css ) {
 
 	// Add global styles to the page
 	util.registerStyle("qs-emergo-divider", css);
 
-	// Extension template
-	var tmpl = '<div class="qs-emergo-divider" ng-class="elClass()" ng-style="elStyle()"></div>',
+	/**
+	 * Holds the reference to the current app's API
+	 *
+	 * @type {Object}
+	 */
+	var app = qlik.currApp(),
+
+	/**
+	 * Holds the app's current theme data
+	 *
+	 * @type {Object}
+	 */
+	currTheme,
+
+	/**
+	 * Return the color picker's corresponding palette color
+	 *
+	 * @param  {Object} picker Color picker value
+	 * @return {String}        Color value
+	 */
+	getPaletteColor = function( picker ) {
+		if (picker && picker.color) {
+			if (-1 !== picker.index) {
+				var paletteColor = _.get(currTheme || {}, "properties.palettes.ui.0.colors".split("."), []);
+				return picker.index < paletteColor.length ? paletteColor[picker.index] : picker.color;
+			} else {
+				return picker.color;
+			}
+		} else {
+			return "#000000";
+		}
+	},
+
+	/**
+	 * Holds the extension template
+	 *
+	 * @type {String}
+	 */
+	tmpl = '<div class="qs-emergo-divider" ng-class="elClass()" ng-style="elStyle()"></div>',
 
 	/**
 	 * Extension controller function
@@ -32,7 +71,6 @@ define([
 	 * @return {Void}
 	 */
 	controller = ["$scope", function( $scope ) {
-
 		/**
 		 * Deregister method after registering scoped extension object css
 		 *
@@ -72,7 +110,7 @@ define([
 
 			// Color
 			if ("color" === props.styleType) {
-				color = props.color && props.color.color;
+				color = getPaletteColor(props.color);
 			} else {
 				color = props[props.styleType];
 				color = util.argbToRgb(color) || util.hexToRgb(color);
@@ -94,6 +132,19 @@ define([
 			deregisterStyle();
 		});
 	}];
+
+	// Find the appprops object and subscribe to layout changes
+	// This listener remains running in memory without end, but it is only
+	// created once for all instances of this extension.
+	app.getObject("AppPropsList").then( function( obj ) {
+		obj.layoutSubscribe( function() {
+
+			// Set the current theme
+			app.theme.getApplied().then( function( theme ) {
+				currTheme = theme;
+			});
+		});
+	});
 
 	return {
 		definition: props,
