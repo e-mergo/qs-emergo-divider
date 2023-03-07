@@ -16,11 +16,13 @@ define([
 			width: 1,
 			styleType: "color",
 			color: {
+				index: -1,
 				color: "#a6a6a6"
 			},
 			colorExpression: ""
 		},
 		showTitles: false,
-		title: JSON.parse(qext).title
+		title: JSON.parse(qext).title,
+		disableNavMenu: true
 	};
 });
