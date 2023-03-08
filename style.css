@@ -21,11 +21,11 @@
 }
 
 .qs-emergo-divider.horizontal.align-start {
-	top: 0%;
+	top: 5px;
 }
 
 .qs-emergo-divider.vertical.align-start {
-	left: 0%;
+	left: 5px;
 }
 
 .qs-emergo-divider.horizontal.align-center {
@@ -37,11 +37,11 @@
 }
 
 .qs-emergo-divider.horizontal.align-end {
-	bottom: 0%;
+	bottom: 5px;
 }
 
 .qs-emergo-divider.vertical.align-end {
-	right: 0%;
+	right: 5px;
 }
 
 /* Card-based themes */
