@@ -84,6 +84,16 @@ define([
 						step: 1,
 						defaultValue: 1
 					},
+					borderRadius: {
+						label: "Border radius",
+						ref: "props.borderRadius",
+						type: "number",
+						component: "slider",
+						min: 0,
+						max: 100,
+						step: 1,
+						defaultValue: 0
+					},
 					styleType: {
 						label: "Color",
 						type: "string",

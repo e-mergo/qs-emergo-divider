@@ -14,6 +14,7 @@ define([
 			orientation: "vertical",
 			alignment: "center",
 			width: 1,
+			borderRadius: 0,
 			styleType: "color",
 			color: {
 				index: -1,

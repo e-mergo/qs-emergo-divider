@@ -124,6 +124,11 @@ define([
 				styles.transform = ("vertical" === props.orientation ? "translateX" : "translateY").concat("(calc(-50%", (props.width % 2 ? " + 1px" : ""), "))");
 			}
 
+			// Border radius
+			if (props.borderRadius) {
+				styles["border-radius"] = "".concat(props.borderRadius, "px");
+			}
+
 			return styles;
 		};
 
