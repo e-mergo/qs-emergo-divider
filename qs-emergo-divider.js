@@ -124,6 +124,11 @@ define([
 				styles.transform = ("vertical" === props.orientation ? "translateX" : "translateY").concat("(calc(-50%", (props.width % 2 ? " + 1px" : ""), "))");
 			}
 
+			// Border style
+			if (props.borderStyle) {
+				styles["border-style"] = -1 !== ["dashed", "dotted", "double", "groove", "inset", "outset", "ridge"].indexOf(props.borderStyle) ? props.borderStyle : "solid";
+			}
+
 			// Border radius
 			if (props.borderRadius) {
 				styles["border-radius"] = "".concat(props.borderRadius, "px");

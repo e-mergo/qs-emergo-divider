@@ -84,6 +84,38 @@ define([
 						step: 1,
 						defaultValue: 1
 					},
+					borderStyle: {
+						label: "Border style",
+						ref: "props.borderStyle",
+						type: "string",
+						component: "dropdown",
+						options: [{
+							label: "Dashed",
+							value: "dashed"
+						}, {
+							label: "Dotted",
+							value: "dotted"
+						}, {
+							label: "Double",
+							value: "double"
+						}, {
+							label: "Groove",
+							value: "groove"
+						}, {
+							label: "Inset",
+							value: "inset"
+						}, {
+							label: "Outset",
+							value: "outset"
+						}, {
+							label: "Ridge",
+							value: "ridge"
+						}, {
+							label: "Solid",
+							value: "solid"
+						}],
+						defaultValue: "solid"
+					},
 					borderRadius: {
 						label: "Border radius",
 						ref: "props.borderRadius",
