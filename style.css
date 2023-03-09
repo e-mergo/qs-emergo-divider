@@ -5,17 +5,17 @@
  */
 .qs-emergo-divider {
 	position: absolute;
-	display: block;
+	display: flex;
 }
 
 .qs-emergo-divider.horizontal {
-	border-bottom: 1px solid #a6a6a6;
+	flex-direction: row;
 	left: 5px;
 	right: 5px;
 }
 
 .qs-emergo-divider.vertical {
-	border-right: 1px solid #a6a6a6;
+	flex-direction: column;
 	top: 5px;
 	bottom: 5px;
 }
@@ -42,6 +42,12 @@
 
 .qs-emergo-divider.vertical.align-end {
 	right: 5px;
+}
+
+.qs-emergo-divider .rule {
+	flex: 1;
+	border: none;
+	margin: 0px;
 }
 
 /* Card-based themes */

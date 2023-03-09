@@ -62,7 +62,7 @@ define([
 	 *
 	 * @type {String}
 	 */
-	tmpl = '<div class="qs-emergo-divider" ng-class="elClass()" ng-style="elStyle()"></div>',
+	tmpl = '<div class="qs-emergo-divider" ng-class="elClass()"><hr class="rule" ng-style="elStyle()" /></div>',
 
 	/**
 	 * Extension controller function
@@ -100,7 +100,7 @@ define([
 		 * @return {Object} Style definition
 		 */
 		$scope.elStyle = function() {
-			var styles = {}, props = $scope.layout.props, color;
+			var styles = {}, props = $scope.layout.props, isVertical = "vertical" === props.orientation, color;
 
 			// Define defaults
 			props.styleType = props.styleType || "color";
@@ -119,15 +119,13 @@ define([
 			styles["border-color"] = color;
 
 			// Width
-			styles["border-width"] = "".concat(props.width, "px");
+			styles["border-width"] = "0 0 ".concat(isVertical ? "0 ".concat(props.width, "px") : "".concat(props.width, "px 0"));
 			if (props.width > 1 && "center" === props.alignment) {
-				styles.transform = ("vertical" === props.orientation ? "translateX" : "translateY").concat("(calc(-50%", (props.width % 2 ? " + 1px" : ""), "))");
+				styles.transform = (isVertical ? "translateX" : "translateY").concat("(calc(-50%", (props.width % 2 ? " + 1px" : ""), "))");
 			}
 
 			// Border style
-			if (props.borderStyle) {
-				styles["border-style"] = -1 !== ["dashed", "dotted", "double", "groove", "inset", "outset", "ridge"].indexOf(props.borderStyle) ? props.borderStyle : "solid";
-			}
+			styles["border-style"] = -1 !== ["dashed", "dotted", "double", "groove", "inset", "outset", "ridge"].indexOf(props.borderStyle) ? props.borderStyle : "solid";
 
 			// Border radius
 			if (props.borderRadius) {
