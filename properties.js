@@ -11,12 +11,20 @@ define([
 	"./util/util",
 	"text!./qs-emergo-divider.qext"
 ], function( qlik, util, qext ) {
+
+	/**
+	 * Holds the QEXT data
+	 *
+	 * @type {Object}
+	 */
+	var qext = JSON.parse(qext),
+
 	/**
 	 * Holds the reference to the current app's API
 	 *
 	 * @type {Object}
 	 */
-	var app = qlik.currApp(),
+	app = qlik.currApp(),
 
 	/**
 	 * Holds the app's current theme data
@@ -178,7 +186,7 @@ define([
 	 */
 	about = {
 		label: function() {
-			return "About ".concat(JSON.parse(qext).title);
+			return "About ".concat(qext.title);
 		},
 		type: "items",
 		items: {
@@ -188,7 +196,7 @@ define([
 			},
 			version: {
 				label: function() {
-					return "Version: ".concat(JSON.parse(qext).version);
+					return "Version: ".concat(qext.version);
 				},
 				component: "text"
 			},
