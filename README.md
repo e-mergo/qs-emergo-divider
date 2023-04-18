@@ -35,6 +35,12 @@ Define whether the divider should be aligned at the start, center or end of the 
 ### Width
 Define the width of the divider based on 1 pixel increments up to a maximum of 30 pixels.
 
+### Border style
+Define the style of the divider based on the available css border styles: Dashed, Dotted, Double, Groove, Inset, Outset, or default Solid.
+
+### Border radius
+Define the border radius of the divider based on 1 pixel increments up to a maximum of 100 pixels.
+
 ### Color
 Setting the divider's color can be done in two ways:
 1. Picking a color from the color palette or the color wheel.
