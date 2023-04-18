@@ -1,7 +1,7 @@
 ---
-Qlik Sense Visualization Extension
+Type: Qlik Sense Visualization Extension
 Name: E-mergo Divider
-Version: 1.1.20200918
+Version: 1.2-beta
 QEXT: qs-emergo-divider.qext
 ---
 
@@ -56,7 +56,15 @@ Requests for additional features can be posted in the extension's GitHub reposit
 
 ## Changelog
 
-#### 1.1.20200918 - QS Sept 2020
+#### 1.2-beta - QS November 2022
+- Ready for Qlik Cloud.
+- Renamed extension label to improve discoverability in the extensions list.
+- Added the _Border style_ property.
+- Added the _Border radius_ property.
+- Fixed switching applied palette colors when the app's theme is changed.
+- Updated docs files.
+
+#### 1.1.20200918 - QS September 2022
 - Checked for the latest version of QS.
 
 #### 1.1.20200731
