@@ -3,7 +3,7 @@
 	"name": "Divider",
 	"type": "visualization",
 	"author": "Laurens Offereins, E-mergo",
-	"version": "1.2-beta.2",
+	"version": "1.2-beta.3",
 	"description": "Divider element that visually separates elements on the sheet.",
 	"icon": "split",
 	"preview": "logo-emergo.png",

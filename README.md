@@ -1,7 +1,7 @@
 ---
 Type: Qlik Sense Visualization Extension
 Name: E-mergo Divider
-Version: 1.2-beta.2
+Version: 1.2-beta.3
 QEXT: qs-emergo-divider.qext
 ---
 
